@@ -1,0 +1,10 @@
+MD5: 64:EC:AB:2E:8F:B8:FA:3B:FE:A6:85:65:A0:69:5F:1B
+SHA1: 9A:8C:63:CC:36:F2:02:3A:9C:4F:D1:CB:CB:60:FD:3D:51:BD:61:8C
+SHA-256: 57:78:42:B6:71:91:DF:04:C3:34:1E:5F:1A:DD:83:FA:8D:D4:52:A7:1F:0B:DE:EF:B6:51:1A:0F:1C:8E:EF:8C
+
+
+C:\projects\Edwin\main_files\AdForest\app\debug
+C:\projects\Edwin\main_files\AdForest\app\debug
+C:\projects\Edwin\main_files\AdForest\app\release
+
+https://www.youtube.com/watch?v=7MrXU-fhacU
