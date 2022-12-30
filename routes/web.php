@@ -29,6 +29,10 @@ route::get('/', [HomeController::class,'index']);
 route::get('/redirect', [HomeController::class,'redirect']);
 route::get('/deleteuser/{id}', [AdminController::class,'deleteuser']);
 route::get('/newuser', [AdminController::class,'newuser']);
+route::post('/createuser', [AdminController::class,'createuser']);
+route::get('/completestatus/{id}', [AdminController::class,'completestatus']);
+route::get('/completed.services', [AdminController::class,'completedservices']);
+
 route::get('/drivers', [AdminController::class,'drivers']);
 route::get('/users', [AdminController::class,'users']);
 route::get('/newdriver', [AdminController::class,'newdriver']);
@@ -93,6 +97,8 @@ route::get('/exportrejected', [AdminController::class,'exportrejected']);
 
 //search
 route::get('/searchcomplete', [AdminController::class,'searchcomplete']);
+route::get('/searchcomservice', [AdminController::class,'searchcomservice']);
+route::get('/searchpenservice', [AdminController::class,'searchpenservice']);
 route::get('/searchapprove', [AdminController::class,'searchapprove']);
 route::get('/searchpending', [AdminController::class,'searchpending']);
 route::get('/searchrejected', [AdminController::class,'searchrejected']);

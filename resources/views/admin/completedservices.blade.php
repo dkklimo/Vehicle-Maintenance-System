@@ -22,7 +22,7 @@
         </div>
         <div class="col-md-3">
         <div class="col-sm-12">
-            <form action="{{url('searchpenservice')}}" method="GET">
+            <form action="{{url('searchcomservice')}}" method="GET">
               @csrf
             <input style="color: #fff; background-color:transparent;" name="search" placeholder="Search.."  type="text" class="form-control" />
             </form>
@@ -31,7 +31,7 @@
         <div class="col-md-5">
         <div style="float: right;">
 
-        <a href="{{url('completed.services')}}"><button style="margin-right:10px;" class="btn btn-secondary">Completed</button></a>
+        <a href="{{url('services')}}"><button style="margin-right:10px;" class="btn btn-secondary">Pending</button></a>
         <a href="{{url('newservice')}}"><button style="margin-right:10px;" class="btn btn-success">Add New</button></a>
         </div>      
         </div>
@@ -43,13 +43,12 @@
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Pending Vehicle Services</h4>
+                    <h4 class="card-title">Completed Vehicle Services</h4>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
                           
                           <tr>
-                            <th>Mark Complete</th>
                             <th> Service Name</th>
                             <th>Status</th>  
                             <th> Vehicle</th>
@@ -67,10 +66,6 @@
                         <tbody>
                         @foreach ($data as $service )                                         
                           <tr>
-
-                            <td>
-                              <a href="{{url('completestatus',$service->id)}}" class="btn btn-success">Complete</a>
-                            </td>
 
                             <td>{{$service->name}}</td>
                             <td class="text-primary">{{$service->status}}</td>
@@ -93,7 +88,7 @@
                                 <p>Next Service:<span style="color:#fff">{{$service->nmileage}}</span>KM</p>
                             </td>
                             <td><span>Ksh.</span>{{$service->amount}}</td>                     
-                            <td><a href="{{url('updateservice',$service->id)}}"><i class="mdi mdi-grease-pencil text-success"></i> </a><a onclick="return confirm('You are about to delete a vehicle service Record');" href="{{url('deleteservice',$service->id)}}"><i class="mdi mdi-delete text-danger"></i></a></td>
+                            <td><a onclick="return confirm('You are about to delete a vehicle service Record');" href="{{url('deleteservice',$service->id)}}"><i class="mdi mdi-delete text-danger"></i></a></td>
                           </tr>
                           @endforeach
                         </tbody>

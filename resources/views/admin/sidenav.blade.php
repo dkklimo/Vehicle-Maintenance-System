@@ -64,14 +64,14 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item menu-items">
+    <!--      <li class="nav-item menu-items">
             <a class="nav-link" href="#">
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
               <span class="menu-title">Reports</span>
             </a>
-          </li>
+          </li>-->
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{url('users')}}">
               <span class="menu-icon">

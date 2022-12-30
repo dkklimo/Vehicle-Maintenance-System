@@ -22,7 +22,7 @@
         <!-- partial:partials/_navbar.html -->
     @include('admin.nav')
         <!-- partial -->
-        <div class="col-12 grid-margin">
+       <div class="col-12 grid-margin"> 
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Driver Details</h4>
@@ -161,7 +161,7 @@
                     </form>
                   </div>
                 </div>
-              </div>      
+              </div>
     
     @include('admin.footer')
   </body>

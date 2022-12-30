@@ -21,6 +21,7 @@ use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -40,6 +41,28 @@ class AdminController extends Controller
 
     public function newuser(){
         return view('admin.newuser');
+    }
+
+    public function createuser(Request $request){
+        $request->validate([
+            'username' => 'required',
+            'phone' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6',
+        ]);
+
+        $data = new User();
+        $data->name = $request->username;
+        $data->phone = $request->phone;
+        $data->email = $request->email;
+        $data->address = $request->address;
+        $data->usertype = $request->usertype;
+        $data->password = Hash::make($request['password']);
+
+        $data->save();
+
+        return redirect()->back()->with('message','User Created Successfully');
+
     }
 
     public function deleteuser($id){
@@ -341,6 +364,17 @@ class AdminController extends Controller
         $data = Repair::where('status','Pending')->where('vehicle','like','%'.$search.'%')->get();
         return view('admin.repairs',compact('data'));
     }
+
+    public function searchcomservice(Request $request){
+        $search=$request->search;
+        $data= service::where('status','Completed')->where('vehicle','like','%'.$search.'%')->get();
+        return view('admin.completedservices',compact('data'));
+    }
+    public function searchpenservice(Request $request){
+        $search=$request->search;
+        $data= service::where('status','Pending')->where('vehicle','like','%'.$search.'%')->get();
+        return view('admin.services',compact('data'));
+    }
     public function download($image){
         return response()->download(public_path('sparepartsimage/'.$image));
     }
@@ -428,6 +462,17 @@ class AdminController extends Controller
         $repair->save();
 
         return redirect()->back();
+    }
+
+    public function completestatus($id){
+        $service = service::find($id);
+        $service->status='Completed';
+        $service->save();
+        return redirect()->back();
+    }
+    public function completedservices(){
+        $data = service::all()->where('status','Completed');
+        return view('admin.completedservices',compact('data'));
     }
     public function complete($id){
         $repair = Repair::find($id);
