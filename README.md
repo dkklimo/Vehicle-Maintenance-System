@@ -1,6 +1,10 @@
 Vehicle Maintenace System in Laravel 8
 
+Screenshots:
 
+![Screenshot (6)](https://user-images.githubusercontent.com/47693336/212889494-4458217d-a8ea-479a-ad4f-74e7af1310f4.png)
+
+![Screenshot (8)](https://user-images.githubusercontent.com/47693336/212889583-9a05dfdd-12bb-4a24-85ae-3d858ffe7ebd.png)
 
 
 
